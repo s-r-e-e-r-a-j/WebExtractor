@@ -57,13 +57,13 @@ def scrape_emails(text):
     email_pattern = re.compile(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}', re.IGNORECASE)
     return list(set(email_pattern.findall(text)))
 
-# Improved phone number extraction using re.finditer
+#  phone number extraction 
 def scrape_phone_numbers(text):
     phone_pattern = re.compile(r'(\+?\d{1,3})?[\s\-\.]?\(?\d{2,4}\)?[\s\-\.]?\d{3,5}[\s\-\.]?\d{3,5}')
     phone_numbers = [match.group().strip() for match in re.finditer(phone_pattern, text) if len(match.group().strip()) >= 7]
     return list(set(phone_numbers))  # Remove duplicates
 
-# Link extraction using regex (full links)
+# Link extraction using regex (liks with and without query parameters)
 def scrape_links(text):
     link_pattern = re.compile(r'https?://[^\s"\']+', re.IGNORECASE)
     return list(set(link_pattern.findall(text)))
