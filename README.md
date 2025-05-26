@@ -36,13 +36,13 @@ cd WebExtractor
 ```bash
 pip3 install -r requirements.txt
 ```
-**Step 3: Run Installer (Linux or Termux)**
+**Step 4: Run Installer (Linux or Termux)**
 ```bash
 python3 install.py
 ```
 **Then type `y` for install**
 
-**Step 4: Run the Tool**
+**Step 5: Run the Tool**
 ```bash
 webextractor
 ```
