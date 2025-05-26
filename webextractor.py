@@ -18,7 +18,7 @@ class Colors:
 
 # Display tool banner
 def display_banner():
-    os.system('clear' if os.name == 'posix' else 'cls')
+    os.system("clear")
     print(f"{Colors.BrightGreen}")
     print(r"""
       __          __  _     ______      _                  _             
@@ -156,4 +156,8 @@ def main():
     print(f"{Colors.BrightRed}[*] Exiting...{Colors.Reset}")
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+            print(f"{Colors.BrightRed} User Aborted {Colors.Reset}");
+            sys.exit()
