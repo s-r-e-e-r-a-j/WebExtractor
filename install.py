@@ -9,15 +9,19 @@ run = os.system
 
 if choice.lower() == 'y':
     if is_termux():
-        run('chmod 777 webextractor.py')
-        run('mkdir -p $PREFIX/share/webextractor')
-        run('cp webextractor.py $PREFIX/share/webextractor/webextractor.py')
+        prefix = os.environ.get('PREFIX')
+        bin_path = os.path.join(prefix, 'bin', 'webextractor')
+        share_path = os.path.join(prefix, 'share', 'webextractor')
 
-        termux_launcher = '#! /data/data/com.termux/files/usr/bin/sh\nexec python3 $PREFIX/share/webextractor/webextractor.py "$@"'
-        with open(os.path.expanduser('$PREFIX/bin/webextractor'), 'w') as file:
+        run('chmod 777 webextractor.py')
+        run(f'mkdir -p {share_path}')
+        run(f'cp webextractor.py {share_path}/webextractor.py')
+
+        termux_launcher = f'#! /data/data/com.termux/files/usr/bin/sh\nexec python3 {share_path}/webextractor.py "$@"'
+        with open(bin_path, 'w') as file:
             file.write(termux_launcher)
 
-        run('chmod +x $PREFIX/bin/webextractor && chmod +x $PREFIX/share/webextractor/webextractor.py')
+        run(f'chmod +x {bin_path} && chmod +x {share_path}/webextractor.py')
         print('''\n\n[+] WebExtractor installed successfully in Termux
 [+] Now just type \x1b[6;30;42mwebextractor\x1b[0m in terminal''')
 
@@ -40,8 +44,9 @@ if choice.lower() == 'y':
 
 elif choice.lower() == 'n':
     if is_termux():
-        run('rm -rf $PREFIX/share/webextractor')
-        run('rm -f $PREFIX/bin/webextractor')
+        prefix = os.environ.get('PREFIX')
+        run(f'rm -rf {prefix}/share/webextractor')
+        run(f'rm -f {prefix}/bin/webextractor')
         print('[!] WebExtractor removed from Termux successfully')
     else:
         if os.geteuid() != 0:
