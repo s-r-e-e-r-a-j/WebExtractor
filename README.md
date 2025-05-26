@@ -14,6 +14,14 @@ WebExtractor is a powerful **OSINT** and **ethical hacking tool developed in Pyt
 - Simple CLI interface
 
 - Lightweight and fast
+  
+## Compatibility
+- Linux (Debian, RedHat, Arch, etc.)
+- Termux (Android)
+
+The tool automatically detects the environment and installs itself accordingly.
+
+
 
  ## Installation
  **Step 1: Clone the Repository**
@@ -36,3 +44,11 @@ python3 install.py
 ```bash
 webextractor
 ```
+
+## Usage
+**Just run the tool and enter the target URL:**
+```bash
+webextractor
+```
+It will display the **extracted emails, phone numbers, and links** in a clean format.
+
