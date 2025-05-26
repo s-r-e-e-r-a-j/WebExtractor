@@ -40,6 +40,8 @@ pip3 install -r requirements.txt
 ```bash
 python3 install.py
 ```
+**Then type `y` for install**
+
 **Step 4: Run the Tool**
 ```bash
 webextractor
@@ -51,4 +53,14 @@ webextractor
 webextractor
 ```
 It will display the **extracted emails, phone numbers, and links** in a clean format.
+
+## Uninstallation
+**Run the install.py script**
+```bash
+python3 install.py
+```
+Then type `n`n for uninstall
+## License
+This project is licensed under the MIT License
+
 
