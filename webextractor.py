@@ -63,7 +63,7 @@ def scrape_phone_numbers(text):
     phone_numbers = [match.group().strip() for match in re.finditer(phone_pattern, text) if len(match.group().strip()) >= 7]
     return list(set(phone_numbers))  # Remove duplicates
 
-# Link extraction using regex (liks with and without query parameters)
+# Link extraction using regex (links with and without query parameters)
 def scrape_links(text):
     link_pattern = re.compile(r'https?://[^\s"\']+', re.IGNORECASE)
     return list(set(link_pattern.findall(text)))
