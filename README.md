@@ -59,7 +59,7 @@ It will display the **extracted emails, phone numbers, and links** in a clean fo
 ```bash
 python3 install.py
 ```
-Then type `n`n for uninstall
+Then type `n` for uninstall
 ## License
 This project is licensed under the MIT License
 
