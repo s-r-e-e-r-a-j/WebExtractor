@@ -1,6 +1,8 @@
 ## WebExtractor
 WebExtractor is a powerful **OSINT** and **ethical hacking tool developed in Python**. It is used to extract **email addresses**, **phone numbers**, and **links** (both visible and hidden) from a target website. Designed for cybersecurity professionals, bug bounty hunters, and ethical hackers, it helps gather critical intelligence from web pages.
 
+The extracted links can also assist in identifying potential vulnerabilities in the website, such as SQL injection (SQLi) points, open directories, exposed admin panels, or unvalidated input fields. These links serve as entry points for further vulnerability assessments and exploitation attempts during ethical hacking or penetration testing.
+
 ## Features
 - **Extracts:**
    - Emails
