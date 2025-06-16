@@ -13,7 +13,7 @@ if choice.lower() == 'y':
         bin_path = os.path.join(prefix, 'bin', 'webextractor')
         share_path = os.path.join(prefix, 'share', 'webextractor')
 
-        run('chmod 777 webextractor.py')
+        run('chmod 755 webextractor.py')
         run(f'mkdir -p {share_path}')
         run(f'cp webextractor.py {share_path}/webextractor.py')
 
@@ -30,7 +30,7 @@ if choice.lower() == 'y':
             print("Please run as root or with sudo")
             sys.exit(1)
 
-        run('chmod 777 webextractor.py')
+        run('chmod 755 webextractor.py')
         run('mkdir -p /usr/share/webextractor')
         run('cp webextractor.py /usr/share/webextractor/webextractor.py')
 
