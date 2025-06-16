@@ -28,7 +28,7 @@ The tool automatically detects the environment and installs itself accordingly.
  ## Installation
  **Step 1: Clone the Repository**
 ```bash
-git clone https://github.com/yourusername/WebExtractor.git
+git clone https://github.com/s-r-e-e-r-a-j/WebExtractor.git
 ```
 **step2: Navigate to the WebExtractor directory**
 ```bash
