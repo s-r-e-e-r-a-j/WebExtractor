@@ -38,6 +38,17 @@ cd WebExtractor
 ```bash
 pip3 install -r requirements.txt
 ```
+**Note for Kali, Parrot, Ubuntu 23.04+ users:**
+
+If you see an error like:
+```go
+error: externally-managed-environment
+```
+then use:
+```bash
+pip3 install -r requirements.txt --break-system-packages
+```
+
 **Step 4: Run Installer (Linux or Termux)**
 ```bash
 python3 install.py
