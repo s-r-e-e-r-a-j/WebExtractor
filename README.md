@@ -23,7 +23,8 @@ The extracted links can also assist in identifying potential vulnerabilities in 
 
 The tool automatically detects the environment and installs itself accordingly.
 
-
+## Disclaimer 
+This tool is intended for educational and ethical OSINT purposes only. Use it only on websites you own or have explicit permission to analyze. The developer is not responsible for any misuse of this tool.
 
  ## Installation
  **Step 1: Clone the Repository**
