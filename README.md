@@ -18,7 +18,7 @@ The extracted links can also assist in identifying potential vulnerabilities in 
 - Lightweight and fast
   
 ## Compatibility
-- Linux (Debian, RedHat, Arch, etc.)
+- Linux (Debian, RHEL, Arch, etc.)
 - Termux (Android)
 
 The tool automatically detects the environment and installs itself accordingly.
