@@ -7,7 +7,7 @@ The extracted links can also assist in identifying potential vulnerabilities in 
 - **Extracts:**
    - Emails
    - Phone Numbers
-   - All Links (visible and hidden)
+   - All Links (including visible, hidden, and social media links)
    
 - Saves the extracted information for further analysis.
 
