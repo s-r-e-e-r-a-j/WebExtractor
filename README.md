@@ -64,11 +64,17 @@ webextractor
 ```
 
 ## Usage
-**Just run the tool and enter the target URL:**
+**Just run the tool:**
 ```bash
 webextractor
 ```
-It will display the **extracted emails, phone numbers, and links** in a clean format.
+1. Provide a valid URL when prompted.
+
+2. Choose whether to extract email addresses, phone numbers, links, or all three
+
+3. It will display the **extracted emails, phone numbers, and links** in a clean format.
+
+4. Optionally save the extracted data to a folder.
 
 ## Uninstallation
 **Run the install.py script**
