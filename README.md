@@ -8,6 +8,8 @@ The extracted links can also assist in identifying potential vulnerabilities in 
    - Emails
    - Phone Numbers
    - All Links (visible and hidden)
+   
+- Saves the extracted information for further analysis.
 
 - Clean and organized output
 
