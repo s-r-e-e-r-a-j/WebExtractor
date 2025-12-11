@@ -64,6 +64,8 @@ def scrape_emails(text, html):
     text = clean_text(text)
     email_pattern = re.compile(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}', re.IGNORECASE)
     emails = set(email_pattern.findall(text)) | set(email_pattern.findall(html))
+    blocked_ext = ('.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.bmp', '.ico')
+    emails = {e for e in emails if not e.lower().endswith(blocked_ext)}
     return list(emails)
 
 #  phone number extraction 
