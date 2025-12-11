@@ -6,6 +6,7 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
+import unicodedata
 
 # Terminal color codes
 class Colors:
@@ -52,10 +53,18 @@ def is_valid_url(url):
     except ValueError:
         return False
 
+def clean_text(text):
+    text = re.sub(r'[\u200b\u200c\u200d\u200e\u200f\uFEFF]', '', text)
+    text = text.replace('\u2024', '.').replace('\u2027', '.')
+    text = unicodedata.normalize("NFKC", text)
+    return text
+
 # Email extraction using regex
-def scrape_emails(text):
+def scrape_emails(text, html):
+    text = clean_text(text)
     email_pattern = re.compile(r'[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}', re.IGNORECASE)
-    return list(set(email_pattern.findall(text)))
+    emails = set(email_pattern.findall(text)) | set(email_pattern.findall(html))
+    return list(emails)
 
 #  phone number extraction 
 def scrape_phone_numbers(text):
@@ -78,12 +87,12 @@ def scrape_website(url, scrape_em, scrape_ph, scrape_ln):
         res.raise_for_status()
 
         soup = BeautifulSoup(res.text, 'html.parser')
-        text = soup.get_text()
-        html = res.text
+        text = clean_text(soup.get_text())
+        html = clean_text(res.text)
         results = {}
 
         if scrape_em:
-            emails = scrape_emails(text)
+            emails = scrape_emails(text,html)
             results['emails'] = emails
             print(f"\n{Colors.BrightYellow}[+] Emails Found:{Colors.Reset}")
             print("\n".join(emails) if emails else "None")
