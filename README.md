@@ -41,7 +41,7 @@ cd WebExtractor
 ```bash
 pip3 install -r requirements.txt
 ```
-**Note for Kali, Parrot, Ubuntu 23.04+ users:**
+**Note for Kali, Parrot, Ubuntu 23.04+, Arch Linux users:**
 
 If you see an error like:
 ```go
